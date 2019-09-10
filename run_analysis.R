@@ -1,13 +1,5 @@
 library(dplyr)
 
-project_file <- "ProjectData.zip"
-# Checking if given name already exists.
-if (!file.exists(project_file)){
-  file_URL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-  download.file(file_URL, project_file, method="curl")
-}
-# Checking if folder exists
-if (!file.exists("UCI HAR Dataset")) unzip(project_file)
 #Reading the tables of interest, adding column names and assigning each table to a variable.
 
 features <- read.table("UCI HAR Dataset/features.txt", col.names = c("n","feature"))
