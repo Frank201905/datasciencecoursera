@@ -1,18 +1,16 @@
-This code book is provided to update the available codebook on hu,an activity using smartphones dataset.
+This code book is provided to update the available codebook on human activity using smartphones dataset.
 It describes changes or transformation made on the variables and the data to clean up the data and produce the tidy data set submitted.
 
 In order to create the R script called run_analysis the following steps were performed:
 
-1. Download and extracted data set files from the following link:
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-2. Assigned each database to an R  variable and named columns in each data frame.
-3. Merged the training and the test sets to create one data set.
+1. Assigned each database to an R  variable and named columns in each data frame.
+2. Merged the training and the test sets to create one data set.
 After merging x, y and subject from train data sets using cbing and merrging x, y and subject from test data sets using cbing, 
 the training and test sets were merged in one data set called "one_dataset" using rbind.
-4. To have descriptive names for activities in the data we joined the created "one_dataset" with the activities database to create "dataset_activity".
-5. Exctracted only measurements on the mean and standard deviation for each measurement and subject and activity data.
+3. To have descriptive names for activities in the data we joined the created "one_dataset" with the activities database to create "dataset_activity".
+4. Exctracted only measurements on the mean and standard deviation for each measurement and subject and activity data.
  This was done by subsetting the "dataset_activity" data set to retain column with subject, activity and variables containing "mean" or "std".
-6. Labeled the data set with descriptive variables names.
+5. Labeled the data set with descriptive variables names.
 Changed "Acc" to "Acceleration", "BodyBody" to "Body", "f" to "Frequency", "freq" to "Frequency",
 "Gyro" to "Gyroscope",  "Mag" to "Magnitude", "t" to "Time", "tBody" to "TimeBody"
 
@@ -65,5 +63,5 @@ tGravityAccMag.mean	to	TimeGravityAccelerationMagnitude.mean
 tGravityAccMag.std	to	TimeGravityAccelerationMagnitude.std
 
 
-7. created an independent tidy data set with the average of each variable for each variable for each activity and each subject named "tidyDatabase".
+6. created an independent tidy data set with the average of each variable for each variable for each activity and each subject named "tidyDatabase".
 
